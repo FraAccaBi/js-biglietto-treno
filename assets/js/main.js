@@ -27,12 +27,12 @@ var prezzo = km * (0.21)
 
 if (età < 18) {
     var sconto = km * (0.21) * (0.2)
-    console.log('dispone di uno sconto di euro ' + sconto );
+    console.log('Sconto di euro ' + sconto );
     var prezzo = prezzo - sconto 
     console.log('Il prezzo del biglietto è di euro ' + prezzo);
 } else if (età > 65) {
     var sconto = km * (0.21) * (0.4)
-    console.log('dispone di uno sconto di euro ' + sconto);
+    console.log('Sconto di euro ' + sconto);
     var prezzo = prezzo - sconto 
     console.log('Il prezzo del biglietto è di euro ' + prezzo);
 } else {
@@ -40,7 +40,7 @@ if (età < 18) {
     console.log('Il prezzo del biglietto è di euro ' + prezzo);
 }
 
-//output con due decimali
+//output con due decimali 
 
 prezzo= prezzo.toString(10)
 var arr_num = prezzo.split(".");
@@ -60,4 +60,4 @@ else
 {
     prezzo = parseInt(prezzo);
 }
-alert(prezzo);
+alert('Il prezzo del biglietto è di euro ' + prezzo);
