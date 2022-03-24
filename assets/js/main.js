@@ -20,20 +20,44 @@ console.log(età);
 
 //calcolo prezzo del biglietto in base ai km (0.21 € al km)
 
-const prezzo = km * (0.21)
-console.log(prezzo);
+var prezzo = km * (0.21)
 
 //sconto del 20% per i minorenni
 //sconto del 40% per gli over 65.
 
 if (età < 18) {
-    const sconto = km * (0.21) * (0.2)
+    var sconto = km * (0.21) * (0.2)
     console.log('dispone di uno sconto di euro ' + sconto );
+    var prezzo = prezzo - sconto 
+    console.log('Il prezzo del biglietto è di euro ' + prezzo);
 } else if (età > 65) {
-    const sconto = km * (0.21) * (0.4)
+    var sconto = km * (0.21) * (0.4)
     console.log('dispone di uno sconto di euro ' + sconto);
+    var prezzo = prezzo - sconto 
+    console.log('Il prezzo del biglietto è di euro ' + prezzo);
 } else {
     console.log('nessuno sconto applicabile');
+    console.log('Il prezzo del biglietto è di euro ' + prezzo);
 }
 
 //output con due decimali
+
+prezzo= prezzo.toString(10)
+var arr_num = prezzo.split(".");
+if (prezzo.indexOf(".") != (-1))
+{
+    if (arr_num[1].length == 1)
+    {
+        prezzo += 0;
+    }
+    else
+    {
+        prezzo = arr_num[0] + "." + arr_num[1].substring(0, 2);
+    }
+    prezzo = parseFloat(prezzo);
+}
+else
+{
+    prezzo = parseInt(prezzo);
+}
+alert(prezzo);
